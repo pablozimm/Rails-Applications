@@ -1,0 +1,30 @@
+<html>
+<header>
+	<title>Test</title>
+</header>
+
+
+<body>
+    <div class ="span8 well">
+      <button class='search btn'>Find Internal Element </button>
+          
+      <div id="find" hidden="true">
+        <form accept-charset="UTF-8" action="/elements/search" data-remote="true" data-update-target="update-container" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="bUv+BfYizbcmrS0MT2FAqkKFPt2UQ9HfG/TBCLRVe38=" /></div>
+          <div class="form-search">
+  <table>
+    <tr><td valign="top">Search by name </td><td><select id="precision" name="precision"><option>exactly</option><option>contains</option></select></td>
+    <td><input class="input-large search-query" id="query" name="query" type="text" /></td>
+    <td><input class="search_button" disable_with="Searching..." src="/assets/search.png" title="Search" type="image" /></td></tr>
+    <tr><td></td><td><input id="with_alias" name="with_alias" type="checkbox" value="1" /> Search aliases</td></tr>
+  </table>
+</div>
+</form>      </div>
+
+      <div id="update-container">
+      ...
+      </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<h1>Listing people</h1>
+
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+     $('table td:nth-child(3) input').change(function()
+     {
+         $(this).parent().prev().html('ch');
+     });
+  });
+</script>
+
+<table>
+    <tr><td>Item</td>       <td>Status</td> <td>Input</td></tr>
+    <tr><td>First Name</td> <td>ok</td>     <td><input type = "text"/></td></tr>
+    <tr><td>Last Name</td>  <td>ok</td>     <td><input type = "text"/></td></tr>
+    <tr><td>Birthday</td>   <td>ok</td>     <td><input type = "text"/></td></tr>
+    <tr><td>Location</td>   <td>ok</td>     <td><input type = "text"/></td></tr>
+    <tr><td>Occupation</td> <td>ok</td>     <td><input type = "text"/></td></tr>
+</table>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<div id = "iris" onclick = "this.style.background = 'gold'">Iris</div>
+<div id = "peter" onclick = "$(this).css('background', 'green');">mark</div>
+<div id = "jean" onclick = "$('#jean').css('background', 'red');">jean</div>
+<div id = "luke" onclick = "$('#luke').hide();">luke</div>
+
+<% @people.each do |person| %>
+  <tr>
+    <td><%= person.name %></td>
+    <td><%= person.address %></td>
+    <td><%= person.phone %></td>
+    <td><%= link_to 'Show', person %></td>
+    <td><%= link_to 'Edit', edit_person_path(person) %></td>
+    <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Person', new_person_path %>
